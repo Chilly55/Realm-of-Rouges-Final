@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ProjectileResource" load_steps=2 format=3 uid="uid://wjwmjxtnjmmu"]
+
+[ext_resource type="Script" path="res://scripts/resources/ProjectileResource.gd" id="1_tdpr0"]
+
+[resource]
+script = ExtResource("1_tdpr0")
+life_time = 5.0
+distance = 10000
+gravity = 1.0
+projectile_force = 0.0

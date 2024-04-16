@@ -6,15 +6,10 @@ extends CharacterBody2D
 
 func _input(event):
 	if event.is_action_pressed("fire"):
-		var new_projectile:RigidBody2D = project_scene.instantiate()
+		var new_projectile:BaseProjectile = project_scene.instantiate()
 		emitter.add_child(new_projectile)
-		new_projectile.position = emitter.global_position
-		var direction = (get_viewport().get_mouse_position() - emitter.global_position).normalized() * 600
-		print(direction)
-		new_projectile.linear_velocity = direction
-		new_projectile.top_level = true
-		
-		
+		var direction = (get_viewport().get_mouse_position() - emitter.global_position).normalized()
+		new_projectile.set_up(emitter.global_position, direction)
 
 func _physics_process(delta):
 	look_at(get_viewport().get_mouse_position())
