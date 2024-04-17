@@ -2,6 +2,9 @@
 
 Where changes are placed
 
+## 0.1.2
+* Added Slime enemy Sprite Animation 
+
 ## 0.1.1
 
 * Added projectile resource
@@ -13,3 +16,4 @@ Where changes are placed
 * Added player
 * Added pointer
 * Added stats manager
+
