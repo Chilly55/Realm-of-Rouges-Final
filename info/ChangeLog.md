@@ -2,6 +2,16 @@
 
 Where changes are placed
 
+## 0.1.3
+
+* Added ItemResource
+	* Added Axe Item
+	* Added Water Container Item
+	* Added Water Hose Item
+* Added Item Holder
+* The player can now hold weapon items
+* The player can now switch between weapons
+
 ## 0.1.2
 * Added Slime enemy Sprite Animation 
 

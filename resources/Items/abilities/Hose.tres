@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://dw38bbfqy2qu6"]
+
+[ext_resource type="Script" path="res://scripts/resources/ItemResource.gd" id="1_3fm70"]
+[ext_resource type="Resource" uid="uid://wjwmjxtnjmmu" path="res://resources/Projectiles/Water.tres" id="1_pm3i7"]
+[ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="2_0c7uu"]
+
+[resource]
+script = ExtResource("1_3fm70")
+item_name = "Water Hose"
+item_type = "weapon"
+unlock_water = true
+double_jump = true
+_projectile = ExtResource("1_pm3i7")
+pick_up_sprite = ExtResource("2_0c7uu")
+weapon_sprite = ExtResource("2_0c7uu")

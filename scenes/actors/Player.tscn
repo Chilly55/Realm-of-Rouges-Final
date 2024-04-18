@@ -1,15 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://c52so8jtsdk1w"]
+[gd_scene load_steps=11 format=3 uid="uid://c52so8jtsdk1w"]
 
 [ext_resource type="Script" path="res://scripts/actors/Player.gd" id="1_pe5nh"]
 [ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="1_x8sqg"]
+[ext_resource type="Resource" uid="uid://buj8bxysewgwm" path="res://resources/Items/abilities/Axe.tres" id="2_2w3v3"]
+[ext_resource type="Resource" uid="uid://dw38bbfqy2qu6" path="res://resources/Items/abilities/Hose.tres" id="3_djgdq"]
 [ext_resource type="Script" path="res://scripts/actors/StatsManager.gd" id="3_hub6t"]
 [ext_resource type="Resource" uid="uid://cw3ds5m5r1pf0" path="res://resources/actors/Player.tres" id="4_jj8wt"]
+[ext_resource type="Resource" uid="uid://bhi7y254w0hge" path="res://resources/Items/abilities/WaterContainer.tres" id="4_ra7uo"]
 [ext_resource type="PackedScene" uid="uid://bivbtviy0fawf" path="res://scenes/items/Pointer.tscn" id="5_4j5vs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_deg47"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orwt2"]
+size = Vector2(26, 26)
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("stats_manager")]
 script = ExtResource("1_pe5nh")
+_weapons = Array[Resource("res://scripts/resources/ItemResource.gd")]([ExtResource("2_2w3v3"), ExtResource("3_djgdq")])
+_abilities = Array[Resource("res://scripts/resources/ItemResource.gd")]([ExtResource("4_ra7uo")])
 stats_manager = NodePath("StatsManager")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -23,4 +31,11 @@ shape = SubResource("RectangleShape2D_deg47")
 script = ExtResource("3_hub6t")
 _actor_resource = ExtResource("4_jj8wt")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("5_4j5vs")]
+[node name="Pointer" parent="." instance=ExtResource("5_4j5vs")]
+
+[node name="PickUpFinder" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpFinder"]
+shape = SubResource("RectangleShape2D_orwt2")
