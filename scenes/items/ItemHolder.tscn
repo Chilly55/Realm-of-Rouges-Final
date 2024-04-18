@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfwtur1aipyev"]
+
+[ext_resource type="Script" path="res://scripts/items/ItemHolder.gd" id="1_mvhas"]
+[ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="1_wqhbq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frj2n"]
+size = Vector2(128, 128)
+
+[node name="ItemHolder" type="StaticBody2D"]
+script = ExtResource("1_mvhas")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wqhbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_frj2n")

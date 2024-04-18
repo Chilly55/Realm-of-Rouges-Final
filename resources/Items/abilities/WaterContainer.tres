@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bhi7y254w0hge"]
+
+[ext_resource type="Script" path="res://scripts/resources/ItemResource.gd" id="1_r176t"]
+
+[resource]
+script = ExtResource("1_r176t")
+item_name = "Water Container"
+item_type = "ability"
+unlock_water = true
+double_jump = true
