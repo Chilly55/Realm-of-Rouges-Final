@@ -2,6 +2,11 @@
 
 Where changes are placed
 
+## 0.1.4
+* Added slime enemy collision
+* Slime will chase player in detection area 
+* Added slime enemy walk, idle, and death animation
+
 ## 0.1.3
 
 * Added ItemResource
