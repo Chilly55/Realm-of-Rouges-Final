@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://bjpdfi2sgn0us"]
+[gd_scene load_steps=21 format=3 uid="uid://bjpdfi2sgn0us"]
 
 [ext_resource type="Texture2D" uid="uid://b8u31s46dobq3" path="res://resources/Sub Assets/characters/slime.png" id="1_dpynl"]
+[ext_resource type="Script" path="res://scripts/actors/slime_enemy.gd" id="1_w5ear"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kuwyq"]
 atlas = ExtResource("1_dpynl")
@@ -125,7 +126,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5d8m"]
+size = Vector2(66, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5axqb"]
+radius = 7.0
+
 [node name="Slime Enemy" type="CharacterBody2D"]
+script = ExtResource("1_w5ear")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, -3)
@@ -133,3 +141,18 @@ sprite_frames = SubResource("SpriteFrames_4yrea")
 animation = &"Idle"
 frame = 3
 frame_progress = 0.586107
+
+[node name="Collision Area" type="Area2D" parent="AnimatedSprite2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Collision Area"]
+position = Vector2(-4, -1)
+shape = SubResource("RectangleShape2D_t5d8m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 0)
+shape = SubResource("CircleShape2D_5axqb")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Collision Area" to="." method="_on_collision_area_body_entered"]
+[connection signal="body_shape_exited" from="AnimatedSprite2D/Collision Area" to="." method="_on_collision_area_body_shape_exited"]
