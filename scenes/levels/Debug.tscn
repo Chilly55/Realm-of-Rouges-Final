@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl3xmslmssawv"]
+[gd_scene load_steps=9 format=3 uid="uid://bl3xmslmssawv"]
 
+[ext_resource type="Script" path="res://scenes/levels/Debug.gd" id="1_keagq"]
 [ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="1_sklfr"]
 [ext_resource type="PackedScene" uid="uid://c52so8jtsdk1w" path="res://scenes/actors/Player.tscn" id="2_qqav2"]
+[ext_resource type="PackedScene" uid="uid://bjpdfi2sgn0us" path="res://scenes/actors/slime_enemy.tscn" id="3_u6a8v"]
+[ext_resource type="PackedScene" uid="uid://dfwtur1aipyev" path="res://scenes/items/ItemHolder.tscn" id="4_1c1a5"]
+[ext_resource type="Resource" uid="uid://dw38bbfqy2qu6" path="res://resources/Items/abilities/Hose.tres" id="5_xutre"]
+[ext_resource type="Resource" uid="uid://cw2q1uv8dlxq5" path="res://resources/Items/collectables/debug_collectable.tres" id="7_m4x7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lsve"]
 size = Vector2(128.464, 129)
 
 [node name="Debug" type="Node2D"]
+script = ExtResource("1_keagq")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(577, 471)
@@ -21,3 +27,26 @@ shape = SubResource("RectangleShape2D_5lsve")
 
 [node name="Player" parent="." instance=ExtResource("2_qqav2")]
 position = Vector2(557, 0)
+
+[node name="Slime Enemy" parent="." instance=ExtResource("3_u6a8v")]
+position = Vector2(333, 391)
+
+[node name="ItemHolder" parent="." instance=ExtResource("4_1c1a5")]
+position = Vector2(779, 332)
+_item = ExtResource("5_xutre")
+
+[node name="ItemHolder2" parent="." instance=ExtResource("4_1c1a5")]
+position = Vector2(465, 358)
+_item = ExtResource("7_m4x7b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Collectables: ??/??"

@@ -2,7 +2,14 @@
 
 Where changes are placed
 
+## 0.1.5
+
+* Changed the collison layer of the player to be player instead of terrian
+* fixed the capitalization
+* The player can now pick up collectables and items
+
 ## 0.1.4
+
 * Added slime enemy collision
 * Slime will chase player in detection area 
 * Added slime enemy walk, idle, and death animation

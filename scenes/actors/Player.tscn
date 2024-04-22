@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c52so8jtsdk1w"]
+[gd_scene load_steps=10 format=3 uid="uid://c52so8jtsdk1w"]
 
 [ext_resource type="Script" path="res://scripts/actors/Player.gd" id="1_pe5nh"]
 [ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="1_x8sqg"]
 [ext_resource type="Resource" uid="uid://buj8bxysewgwm" path="res://resources/Items/abilities/Axe.tres" id="2_2w3v3"]
-[ext_resource type="Resource" uid="uid://dw38bbfqy2qu6" path="res://resources/Items/abilities/Hose.tres" id="3_djgdq"]
 [ext_resource type="Script" path="res://scripts/actors/StatsManager.gd" id="3_hub6t"]
 [ext_resource type="Resource" uid="uid://cw3ds5m5r1pf0" path="res://resources/actors/Player.tres" id="4_jj8wt"]
 [ext_resource type="Resource" uid="uid://bhi7y254w0hge" path="res://resources/Items/abilities/WaterContainer.tres" id="4_ra7uo"]
@@ -15,8 +14,9 @@
 size = Vector2(26, 26)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("stats_manager")]
+collision_layer = 2
 script = ExtResource("1_pe5nh")
-_weapons = Array[Resource("res://scripts/resources/ItemResource.gd")]([ExtResource("2_2w3v3"), ExtResource("3_djgdq")])
+_weapons = Array[Resource("res://scripts/resources/ItemResource.gd")]([ExtResource("2_2w3v3")])
 _abilities = Array[Resource("res://scripts/resources/ItemResource.gd")]([ExtResource("4_ra7uo")])
 stats_manager = NodePath("StatsManager")
 
@@ -39,3 +39,15 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpFinder"]
 shape = SubResource("RectangleShape2D_orwt2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="weapon" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Weapon: ????"
+
+[connection signal="body_entered" from="PickUpFinder" to="." method="_on_pick_up_finder_body_entered"]

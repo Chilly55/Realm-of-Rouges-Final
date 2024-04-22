@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://cw2q1uv8dlxq5"]
+
+[ext_resource type="Resource" uid="uid://wjwmjxtnjmmu" path="res://resources/Projectiles/Water.tres" id="1_yeid5"]
+[ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="2_vcpch"]
+[ext_resource type="Script" path="res://scripts/resources/ItemResource.gd" id="3_wn7fq"]
+
+[resource]
+script = ExtResource("3_wn7fq")
+item_name = "Item"
+item_type = "collectable"
+unlock_water = true
+double_jump = true
+_projectile = ExtResource("1_yeid5")
+pick_up_sprite = ExtResource("2_vcpch")
+weapon_sprite = ExtResource("2_vcpch")

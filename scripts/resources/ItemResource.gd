@@ -4,7 +4,7 @@ class_name ItemResource
 
 @export_category("Information")
 @export var item_name:String
-@export_enum("Collectable", "ability", "weapon") var item_type = "rescue":
+@export_enum("collectable", "ability", "weapon") var item_type = "collectable":
 	set(value):
 		item_type = value
 		notify_property_list_changed()

@@ -8,14 +8,14 @@ func _physics_process(delta):
 	if player_chase:
 		position += (player.position - position )/speed 
 
-		$AnimatedSprite2D.play("walk") 
+		$AnimatedSprite2D.play("Walk") 
 		
 		if (player.position.x - position.x) < 0:
 			$AnimatedSprite2D.flip_h = true 
 		else:
 			$AnimatedSprite2D.flip_h = false 
 	else:
-		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D.play("Idle")
 
 
 func _on_collision_area_body_entered(body):

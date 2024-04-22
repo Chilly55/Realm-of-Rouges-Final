@@ -11,6 +11,8 @@ extends CharacterBody2D
 var weapon_index := 0
 const JUMP_VELOCITY = -400.0
 
+@onready var weapon = $CanvasLayer/VBoxContainer/weapon
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -31,6 +33,7 @@ func change_weapon():
 		pointer.disable_pointer(true)
 	else:
 		pointer.change_projectile(_weapons[weapon_index]._projectile)
+		weapon.text = "Weapon: %s" % _weapons[weapon_index].item_name
 
 func _input(event):
 	if event.is_action_pressed("next weapon"):
@@ -60,3 +63,12 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, stats_manager.speed)
 
 	move_and_slide()
+
+
+func _on_pick_up_finder_body_entered(body):
+	var item:ItemResource = body.get_item()
+	if item.item_type == 'weapon' and item not in _weapons:
+		_weapons.append(item)
+		weapon_index = _weapons.size()-1
+		change_weapon()
+	body.queue_free()
