@@ -2,6 +2,10 @@
 
 Where changes are placed
 
+## 0.1.6
+
+* added dev tileset for terrian
+
 ## 0.1.5
 
 * Changed the collison layer of the player to be player instead of terrian
