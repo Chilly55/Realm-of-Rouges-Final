@@ -2,6 +2,12 @@
 
 Where changes are placed
 
+## 0.1.7
+
+* the player can now use water
+* the hose can now consume water
+* Water fountain has been added
+
 ## 0.1.6
 
 * added dev tileset for terrian

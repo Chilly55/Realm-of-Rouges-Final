@@ -11,5 +11,6 @@ item_type = "weapon"
 unlock_water = true
 double_jump = true
 _projectile = ExtResource("1_pm3i7")
+ammo_type = "water"
 pick_up_sprite = ExtResource("2_0c7uu")
 weapon_sprite = ExtResource("2_0c7uu")

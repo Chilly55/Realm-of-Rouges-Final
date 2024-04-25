@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdt51o7td317i"]
+
+[ext_resource type="Script" path="res://scripts/interactable/WaterFountain.gd" id="1_bhwry"]
+[ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="2_hpmj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhrou"]
+size = Vector2(94, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7s6ct"]
+size = Vector2(97, 174)
+
+[node name="WaterFountain" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_bhwry")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -83)
+scale = Vector2(0.729838, 1.30363)
+texture = ExtResource("2_hpmj2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -83)
+shape = SubResource("RectangleShape2D_fhrou")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -83)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_7s6ct")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

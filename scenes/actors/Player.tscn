@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c52so8jtsdk1w"]
+[gd_scene load_steps=9 format=3 uid="uid://c52so8jtsdk1w"]
 
 [ext_resource type="Script" path="res://scripts/actors/Player.gd" id="1_pe5nh"]
 [ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="1_x8sqg"]
 [ext_resource type="Resource" uid="uid://buj8bxysewgwm" path="res://resources/Items/abilities/Axe.tres" id="2_2w3v3"]
 [ext_resource type="Script" path="res://scripts/actors/StatsManager.gd" id="3_hub6t"]
 [ext_resource type="Resource" uid="uid://cw3ds5m5r1pf0" path="res://resources/actors/Player.tres" id="4_jj8wt"]
-[ext_resource type="Resource" uid="uid://bhi7y254w0hge" path="res://resources/Items/abilities/WaterContainer.tres" id="4_ra7uo"]
 [ext_resource type="PackedScene" uid="uid://bivbtviy0fawf" path="res://scenes/items/Pointer.tscn" id="5_4j5vs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_deg47"]
@@ -17,7 +16,6 @@ size = Vector2(26, 26)
 collision_layer = 2
 script = ExtResource("1_pe5nh")
 _weapons = Array[Resource("res://scripts/resources/ItemResource.gd")]([ExtResource("2_2w3v3")])
-_abilities = Array[Resource("res://scripts/resources/ItemResource.gd")]([ExtResource("4_ra7uo")])
 stats_manager = NodePath("StatsManager")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -42,12 +40,20 @@ shape = SubResource("RectangleShape2D_orwt2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="Stats" type="VBoxContainer" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="weapon" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="weapon" type="Label" parent="CanvasLayer/Stats"]
 layout_mode = 2
 text = "Weapon: ????"
+
+[node name="JumpCountLabel" type="Label" parent="CanvasLayer/Stats"]
+layout_mode = 2
+text = "Jump count: # / #"
+
+[node name="Water" type="Label" parent="CanvasLayer/Stats"]
+layout_mode = 2
+text = "Water: # / #"
 
 [connection signal="body_entered" from="PickUpFinder" to="." method="_on_pick_up_finder_body_entered"]

@@ -14,6 +14,7 @@ class_name ItemResource
 @export var double_jump := true
 ## Weapons
 @export var _projectile:ProjectileResource
+@export_enum('none', 'water') var ammo_type = 'none'
 @export_category("Sprites")
 @export var pick_up_sprite:CompressedTexture2D
 # Weapons
@@ -23,7 +24,7 @@ class_name ItemResource
 func _validate_property(property):
 	if property.name in ['unlock_water', 'double_jump'] and item_type != "ability":
 		property.usage = PROPERTY_USAGE_NO_EDITOR
-	if property.name in ['_projectile', 'weapon_sprite'] and item_type != 'weapon':
+	if property.name in ['_projectile', 'weapon_sprite', 'ammo_type'] and item_type != 'weapon':
 		property.usage = PROPERTY_USAGE_NO_EDITOR
 
 """

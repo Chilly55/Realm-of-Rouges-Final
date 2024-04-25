@@ -25,9 +25,8 @@ func fire_projectile():
 	var direction = (get_viewport().get_mouse_position() - emitter.global_position).normalized()
 	new_projectile.set_up(emitter.global_position, direction)
 
-
-func _input(event):
-	if event.is_action_pressed("fire") and !disabled:
+func fire():
+	if !disabled:
 		fire_projectile()
 
 func _physics_process(delta):

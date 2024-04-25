@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bhi7y254w0hge"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bhi7y254w0hge"]
 
 [ext_resource type="Script" path="res://scripts/resources/ItemResource.gd" id="1_r176t"]
+[ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="1_vswd6"]
 
 [resource]
 script = ExtResource("1_r176t")
@@ -8,3 +9,5 @@ item_name = "Water Container"
 item_type = "ability"
 unlock_water = true
 double_jump = true
+ammo_type = "none"
+pick_up_sprite = ExtResource("1_vswd6")
