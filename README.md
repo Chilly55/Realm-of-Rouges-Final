@@ -1,6 +1,6 @@
 # Realm of Rouges Final
 
-version -  0.1.7
+version -  0.1.8
 4/10/2024
 
  We are making a 2d Metroidvania game where you play as a firefighter sent to another world.
@@ -10,6 +10,12 @@ version -  0.1.7
 
 ## Credits
 
-* 
+### Developers
+
+* Parris Oliver
 * David Cruz
-*
+* Max Rafert
+
+### Fonts
+Flames - Rick Mueller
+Imortal - Apostrophic Labs

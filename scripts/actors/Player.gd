@@ -54,7 +54,7 @@ func _input(event):
 		var gun_uses_water:bool = (get_current_gun().ammo_type == 'water' and water_capacity > 0)
 		var gun_uses_no_ammo:bool = get_current_gun().ammo_type == 'none'
 		if gun_uses_water or gun_uses_no_ammo:
-			pointer.fire()
+			pointer.fire(get_viewport().get_mouse_position())
 			if gun_uses_water:
 				change_water_amount(-1)
 		
@@ -65,6 +65,8 @@ func _input(event):
 
 
 func _physics_process(delta):
+	pointer.point_pointer(get_viewport().get_mouse_position())
+	
 	# Add the gravity.
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y = 0
@@ -102,7 +104,6 @@ func _on_pick_up_finder_body_entered(body):
 		weapon_index = _weapons.size() - 1
 		change_weapon()
 	if item.item_type == "ability" and item not in _abilities:  # if the item is an ability
-		print(item.item_name)
 		_abilities.append(item)
 		if item.unlock_water:
 			can_use_water = true
