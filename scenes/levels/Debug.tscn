@@ -29,6 +29,8 @@ shape = SubResource("RectangleShape2D_5lsve")
 
 [node name="Player" parent="." instance=ExtResource("2_qqav2")]
 position = Vector2(557, 0)
+stats_manager = Object(Node,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":Resource("res://scripts/actors/StatsManager.gd"),"_actor_resource":Resource("res://resources/actors/Player.tres"))
+
 
 [node name="Slime Enemy" parent="." instance=ExtResource("3_u6a8v")]
 position = Vector2(333, 391)
