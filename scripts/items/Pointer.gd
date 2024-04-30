@@ -18,16 +18,16 @@ func change_projectile(projectile_resource:ProjectileResource):
 	disable_pointer(false)
 
 
-func fire_projectile():
+func fire_projectile(target:Vector2):
 	var new_projectile:BaseProjectile = project_scene.instantiate()
 	new_projectile._projectile_resource = projectile
 	emitter.add_child(new_projectile)
-	var direction = (get_viewport().get_mouse_position() - emitter.global_position).normalized()
+	var direction = (target - emitter.global_position).normalized()
 	new_projectile.set_up(emitter.global_position, direction)
 
-func fire():
+func fire(target:Vector2):
 	if !disabled:
-		fire_projectile()
+		fire_projectile(target)
 
-func _physics_process(delta):
-	look_at(get_viewport().get_mouse_position())
+func point_pointer(target:Vector2):
+	look_at(target)

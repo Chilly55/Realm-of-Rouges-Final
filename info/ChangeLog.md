@@ -2,6 +2,15 @@
 
 Where changes are placed
 
+## 0.1.8
+
+* Added goblin placeholder
+* pointer is now completly seperate from the player
+* Added unimplemented menues
+* added fonts
+	* Flames
+	* Imortal
+
 ## 0.1.7
 
 * the player can now use water
