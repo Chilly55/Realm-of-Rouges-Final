@@ -12,14 +12,16 @@ var jump_count_max = 1
 @export var water_capacity := 10
 @export var water_limit := 10
 
-@onready var pointer:Pointer = $Pointer
 
 var weapon_index := 0
 const JUMP_VELOCITY = -400.0
+var face_direction := 1
 
-@onready var weapon = $CanvasLayer/Stats/weapon
-@onready var jump_count_label = $CanvasLayer/Stats/JumpCountLabel
-@onready var water = $CanvasLayer/Stats/Water
+@onready var weapon := $CanvasLayer/Stats/weapon
+@onready var jump_count_label := $CanvasLayer/Stats/JumpCountLabel
+@onready var water := $CanvasLayer/Stats/Water
+@onready var sprite_2d := $Sprite2D
+@onready var pointer:Pointer = $Pointer
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -64,6 +66,20 @@ func _input(event):
 		change_weapon_index(-1)
 
 
+func _process(delta):
+	var point_direction = (global_position - get_viewport().get_mouse_position()).normalized().x
+	var corrected_direction = 1 if point_direction > 0 else -1
+	sprite_2d.flip_h = true if corrected_direction == 1 else false
+	
+	var speed_dis = clamp((face_direction * corrected_direction) * -1, -1, 1)
+	print(speed_dis)
+	if velocity.x != 0:
+		sprite_2d.play("walk", speed_dis)
+	else:
+		sprite_2d.play("default")
+	pass
+
+
 func _physics_process(delta):
 	pointer.point_pointer(get_viewport().get_mouse_position())
 	
@@ -91,6 +107,7 @@ func _physics_process(delta):
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * stats_manager.speed
+		face_direction = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, stats_manager.speed)
 
