@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctqr8tkijrci2"]
+
+[ext_resource type="Script" path="res://NPC.gd" id="1_vm2kl"]
+[ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="2_looxt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp4r5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_looxt")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gs5oj"]
+size = Vector2(128, 126)
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_vm2kl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pp4r5")
+animation = &"IDLE"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_gs5oj")
+
+[node name="Timer" type="Timer" parent="."]

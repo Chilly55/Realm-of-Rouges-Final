@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://cw2q1uv8dlxq5" path="res://resources/Items/collectables/debug_collectable.tres" id="7_m4x7b"]
 [ext_resource type="Resource" uid="uid://bhi7y254w0hge" path="res://resources/Items/abilities/WaterContainer.tres" id="8_t0xk4"]
 [ext_resource type="PackedScene" uid="uid://cdt51o7td317i" path="res://scenes/interactable/water_fountain.tscn" id="9_crl3u"]
-[ext_resource type="PackedScene" uid="uid://drj0y0bat3plp" path="res://scenes/actors/goblin.tscn" id="10_3stmv"]
+[ext_resource type="PackedScene" path="res://scenes/actors/goblin.tscn" id="10_3stmv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lsve"]
 size = Vector2(128.464, 129)
@@ -30,6 +30,8 @@ shape = SubResource("RectangleShape2D_5lsve")
 
 [node name="Player" parent="." instance=ExtResource("2_qqav2")]
 position = Vector2(557, 0)
+stats_manager = Object(Node,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":Resource("res://scripts/actors/StatsManager.gd"),"_actor_resource":Resource("res://resources/actors/Player.tres"))
+
 
 [node name="Slime Enemy" parent="." instance=ExtResource("3_u6a8v")]
 position = Vector2(333, 391)
@@ -63,3 +65,5 @@ position = Vector2(845, 403)
 
 [node name="Goblin" parent="." instance=ExtResource("10_3stmv")]
 position = Vector2(162, 387)
+stats_manager = Object(Node,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":Resource("res://scripts/actors/StatsManager.gd"),"_actor_resource":null)
+
