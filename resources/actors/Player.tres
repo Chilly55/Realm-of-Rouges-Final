@@ -5,3 +5,8 @@
 [resource]
 script = ExtResource("1_bxjed")
 name = "Ignatius"
+health = 20
+speed = 400
+jump_height = -600
+acenstion_time = 0.9
+decension_time = 0.9

@@ -61,11 +61,11 @@ size = Vector2(13, 43)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orwt2"]
 size = Vector2(24, 43)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("stats_manager")]
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_pe5nh")
 _weapons = Array[Resource("res://scripts/resources/ItemResource.gd")]([ExtResource("2_2w3v3")])
-stats_manager = NodePath("StatsManager")
+_actor_resource = ExtResource("4_jj8wt")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -83,6 +83,7 @@ _actor_resource = ExtResource("4_jj8wt")
 
 [node name="Pointer" parent="." instance=ExtResource("5_4j5vs")]
 position = Vector2(0, -30)
+collison = 5
 
 [node name="PickUpFinder" type="Area2D" parent="."]
 position = Vector2(0, -30)
@@ -99,16 +100,20 @@ shape = SubResource("RectangleShape2D_orwt2")
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="health" type="Label" parent="CanvasLayer/Stats"]
+layout_mode = 2
+text = "Health: ## / ##"
+
 [node name="weapon" type="Label" parent="CanvasLayer/Stats"]
 layout_mode = 2
 text = "Weapon: ????"
 
-[node name="JumpCountLabel" type="Label" parent="CanvasLayer/Stats"]
-layout_mode = 2
-text = "Jump count: # / #"
-
 [node name="Water" type="Label" parent="CanvasLayer/Stats"]
 layout_mode = 2
 text = "Water: # / #"
+
+[node name="JumpCountLabel" type="Label" parent="CanvasLayer/Stats"]
+layout_mode = 2
+text = "Jump count: # / #"
 
 [connection signal="body_entered" from="PickUpFinder" to="." method="_on_pick_up_finder_body_entered"]

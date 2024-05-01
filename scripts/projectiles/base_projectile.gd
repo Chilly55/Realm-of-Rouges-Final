@@ -5,6 +5,8 @@ class_name BaseProjectile
 @export var projectile_collison_box:Area2D
 
 @export var projectile_force : float
+@export_flags_2d_physics var collison = 0b0000
+@onready var area_2d = $Area2D
 
 
 func set_up(pos:Vector2, direction:Vector2):
@@ -16,6 +18,7 @@ func set_up(pos:Vector2, direction:Vector2):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	area_2d.collision_mask = collison
 	gravity_scale = _projectile_resource.gravity
 	var death_timer = Timer.new()
 	add_child(death_timer)
@@ -25,6 +28,8 @@ func _ready():
 	projectile_collison_box.body_entered.connect(die)
 
 func die(_node):
+	if _node is Actor:
+		_node.change_health(-_projectile_resource.damage)
 	queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

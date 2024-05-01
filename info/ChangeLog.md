@@ -2,6 +2,15 @@
 
 Where changes are placed
 
+## 0.1.9
+
+* All actors now inherit from the actor base class
+  * Player
+  * Goblin
+  * Slime
+* All actors can now take damage
+* The projectile's collison mask can now be assigned by the pointer
+
 ## 0.1.8
 
 * Added goblin placeholder
