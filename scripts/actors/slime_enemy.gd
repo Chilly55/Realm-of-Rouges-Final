@@ -11,7 +11,7 @@ func _physics_process(delta):
 	if player_chase:
 		position += (player.position - position ) / speed 
 		
-		animated_sprite_2d.flip_h = true if (player.position.x - position.x) < 0 else false
+		animated_sprite_2d.flip_h = true if (player.position.x - position.x) > 0 else false
 		animated_sprite_2d.play("Walk") 
 	else:
 		animated_sprite_2d.play("Idle")

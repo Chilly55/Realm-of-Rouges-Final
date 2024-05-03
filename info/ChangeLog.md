@@ -2,6 +2,13 @@
 
 Where changes are placed
 
+## 0.1.11
+
+* New walk sprites for the player
+* Player head can follow the mouse
+* Slime sprite created
+* Slime sprite changed to new sprites
+
 ## 0.1.9
 
 * All actors now inherit from the actor base class

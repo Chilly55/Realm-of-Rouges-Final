@@ -34,6 +34,8 @@ var face_direction := 1
 
 # Nodes
 @onready var sprite_2d := $Sprite2D
+@onready var sprite_2d_2 = $Sprite2D2
+
 @onready var pointer:Pointer = $Pointer
 
 signal jump_change()
@@ -57,7 +59,7 @@ func _input(event):
 		var gun_uses_water:bool = (get_current_gun().ammo_type == 'water' and water_capacity > 0)
 		var gun_uses_no_ammo:bool = get_current_gun().ammo_type == 'none'
 		if gun_uses_water or gun_uses_no_ammo:
-			pointer.fire(get_viewport().get_mouse_position())
+			pointer.fire(get_global_mouse_position())
 			if gun_uses_water:
 				change_water_amount(-1)
 		
@@ -68,7 +70,8 @@ func _input(event):
 
 
 func _physics_process(delta):
-	pointer.point_pointer(get_viewport().get_mouse_position())
+	pointer.point_pointer(get_global_mouse_position())
+	sprite_2d_2.look_at(get_global_mouse_position())
 	
 	jump_controls(delta)
 
@@ -103,9 +106,10 @@ func get_gravity():
 
 
 func _process(delta):
-	var point_direction = (global_position - get_viewport().get_mouse_position()).normalized().x
+	var point_direction = (global_position - get_global_mouse_position()).normalized().x
 	var corrected_direction = 1 if point_direction > 0 else -1
 	sprite_2d.flip_h = true if corrected_direction == 1 else false
+	sprite_2d_2.flip_v = true if corrected_direction == 1 else false
 	
 	var speed_dis = clamp((face_direction * corrected_direction) * -1, -1, 1)
 	if velocity.x != 0:
