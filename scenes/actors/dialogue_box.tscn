@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceulnjhkk665c"]
+
+[ext_resource type="Texture2D" uid="uid://onw07es5j1ki" path="res://assets/Sub Assets/dialogue_box.png" id="1_dklbk"]
+
+[node name="Dialogue Box" type="CanvasLayer"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 409.0
+offset_bottom = 101.0
+texture = ExtResource("1_dklbk")
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 5.0
+offset_right = 203.0
+offset_bottom = 27.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Villager"
+
+[node name="Chat" type="RichTextLabel" parent="."]
+offset_left = 41.0
+offset_top = 35.0
+offset_right = 297.0
+offset_bottom = 55.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Hello Travelor"

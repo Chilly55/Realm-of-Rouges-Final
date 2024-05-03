@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://cw2q1uv8dlxq5" path="res://resources/Items/collectables/debug_collectable.tres" id="7_m4x7b"]
 [ext_resource type="Resource" uid="uid://bhi7y254w0hge" path="res://resources/Items/abilities/WaterContainer.tres" id="8_t0xk4"]
 [ext_resource type="PackedScene" uid="uid://cdt51o7td317i" path="res://scenes/interactable/water_fountain.tscn" id="9_crl3u"]
-[ext_resource type="PackedScene" path="res://scenes/actors/goblin.tscn" id="10_3stmv"]
+[ext_resource type="PackedScene" uid="uid://drj0y0bat3plp" path="res://scenes/actors/goblin.tscn" id="10_3stmv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lsve"]
 size = Vector2(128.464, 129)
