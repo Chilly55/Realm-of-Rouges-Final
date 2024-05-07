@@ -1,0 +1,17 @@
+extends Node
+
+# references audio player node
+var audio_player: AudioStreamPlayer
+
+# references audio player node
+func _ready():
+    audio_player = $AudioStreamPlayer
+    
+    # starts playing the music
+    if audio_player:
+        audio_player.play()
+
+# should stop if gameplay is lost
+func stop_music():
+    if audio_player:
+        audio_player.stop()

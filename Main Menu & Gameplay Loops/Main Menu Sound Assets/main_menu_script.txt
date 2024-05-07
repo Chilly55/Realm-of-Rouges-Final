@@ -1,0 +1,18 @@
+extends Node
+
+# references audio player node
+var audio_player: AudioStreamPlayer
+
+
+func _ready():
+    audio_player = $AudioStreamPlayer
+    
+    # starts playing the music
+    if audio_player:
+        audio_player.play()
+
+# function called when exiting main menu tree
+func _exit_tree():
+    # Stop playing the music
+    if audio_player:
+        audio_player.stop()

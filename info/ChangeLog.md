@@ -7,6 +7,12 @@ Where changes are placed
 * Added NPC IDlE
 * Added NPC Dialogue box
 
+## 0.1.11
+* New walk sprites for the player
+* Player head can follow the mouse
+* Slime sprite created
+* Slime sprite changed to new sprites
+
 ## 0.1.9
 
 * All actors now inherit from the actor base class
