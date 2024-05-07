@@ -2,6 +2,11 @@
 
 Where changes are placed
 
+## 0.1.10 
+* Added NPC Placeholder Asset
+* Added NPC IDlE
+* Added NPC Dialogue box
+
 ## 0.1.9
 
 * All actors now inherit from the actor base class
