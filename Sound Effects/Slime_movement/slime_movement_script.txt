@@ -1,0 +1,17 @@
+# Function to handle NPC movement
+func move_npc(delta: float):
+    # Define movement logic here
+    # For example:
+    move_direction = Vector2(1, 0) # Move right as an example
+    move_direction = move_direction.normalized()
+    
+    # Move the NPC based on the speed
+    move_and_slide(move_direction * speed)
+    
+    # Trigger the sound effect
+    play_sound()
+
+# Function to play the sound effect
+func play_sound():
+    # Play the sound effect
+    sound_player.play()

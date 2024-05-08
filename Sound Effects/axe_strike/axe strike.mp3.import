@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8p73v2jvcu32"
+path="res://.godot/imported/axe strike.mp3-c91f19f3a7030e602b7a468b2cd9a1ea.mp3str"
+
+[deps]
+
+source_file="res://axe strike.mp3"
+dest_files=["res://.godot/imported/axe strike.mp3-c91f19f3a7030e602b7a468b2cd9a1ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,6 @@
+# play the shooting sound effect apply to the existing water function
+    play_sound()
+	
+# function to play sound effect
+func play_sound():
+    sound_player.play()
