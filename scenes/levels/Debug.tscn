@@ -44,16 +44,6 @@ _item = ExtResource("7_m4x7b")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "Collectables: ??/??"
-
 [node name="ItemHolder3" parent="." instance=ExtResource("4_1c1a5")]
 position = Vector2(709, 369)
 _item = ExtResource("8_t0xk4")

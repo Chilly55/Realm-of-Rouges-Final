@@ -2,6 +2,15 @@
 
 Where changes are placed
 
+## 0.2
+
+* created the signal bus
+* Player can now get data from the map
+  * The player's pointer will not fire if disabled
+* Base map script created
+* The Item holder will now emit a signal when it's a collevtable and is collected
+* Created Level 1
+
 ## 0.1.11
 
 * New walk sprites for the player
