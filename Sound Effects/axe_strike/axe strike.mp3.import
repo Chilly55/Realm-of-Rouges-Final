@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://8p73v2jvcu32"
-path="res://.godot/imported/axe strike.mp3-c91f19f3a7030e602b7a468b2cd9a1ea.mp3str"
+path="res://.godot/imported/axe strike.mp3-4822b3e70fac97e2197223352ffc1448.mp3str"
 
 [deps]
 
-source_file="res://axe strike.mp3"
-dest_files=["res://.godot/imported/axe strike.mp3-c91f19f3a7030e602b7a468b2cd9a1ea.mp3str"]
+source_file="res://Sound Effects/axe_strike/axe strike.mp3"
+dest_files=["res://.godot/imported/axe strike.mp3-4822b3e70fac97e2197223352ffc1448.mp3str"]
 
 [params]
 

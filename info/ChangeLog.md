@@ -2,7 +2,13 @@
 
 Where changes are placed
 
-## 0.2
+## 0.2.1
+* Added NPC dialogue script
+    * Added npc dialogue text apon first interaction and collectable completion 
+    * Added ability for dailogue box to appear and diasapear when talking to npc
+
+
+## 0.2.0
 
 * created the signal bus
 * Player can now get data from the map

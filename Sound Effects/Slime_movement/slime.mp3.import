@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cca8moagnjv76"
-path="res://.godot/imported/slime.mp3-e979b16e15c21d38214cca26841bddf5.mp3str"
+path="res://.godot/imported/slime.mp3-ef01fcc68c8893cf7dbf297a82009de4.mp3str"
 
 [deps]
 
-source_file="res://slime.mp3"
-dest_files=["res://.godot/imported/slime.mp3-e979b16e15c21d38214cca26841bddf5.mp3str"]
+source_file="res://Sound Effects/Slime_movement/slime.mp3"
+dest_files=["res://.godot/imported/slime.mp3-ef01fcc68c8893cf7dbf297a82009de4.mp3str"]
 
 [params]
 
