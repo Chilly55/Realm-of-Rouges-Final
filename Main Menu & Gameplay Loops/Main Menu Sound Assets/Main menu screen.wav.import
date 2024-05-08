@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dsgh4wikq7ccq"
-path="res://.godot/imported/Main menu screen.wav-33e49f7f3c5f4b8d3fb19f408cb7db2c.sample"
+path="res://.godot/imported/Main menu screen.wav-77130cdd35973e9c1ab51c3c11223b8c.sample"
 
 [deps]
 
-source_file="res://Main Menu Sound Assets/Main menu screen.wav"
-dest_files=["res://.godot/imported/Main menu screen.wav-33e49f7f3c5f4b8d3fb19f408cb7db2c.sample"]
+source_file="res://Main Menu & Gameplay Loops/Main Menu Sound Assets/Main menu screen.wav"
+dest_files=["res://.godot/imported/Main menu screen.wav-77130cdd35973e9c1ab51c3c11223b8c.sample"]
 
 [params]
 

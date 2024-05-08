@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ivjiol2binub"
-path="res://.godot/imported/Gameplay Loop.wav-18fb38c846c762105e6178c309aca90e.sample"
+path="res://.godot/imported/Gameplay Loop.wav-a82ecab8ef799fdd1e982153bd5e1692.sample"
 
 [deps]
 
-source_file="res://Gameplay Loop.wav"
-dest_files=["res://.godot/imported/Gameplay Loop.wav-18fb38c846c762105e6178c309aca90e.sample"]
+source_file="res://Main Menu & Gameplay Loops/Game Play Loop/Gameplay Loop.wav"
+dest_files=["res://.godot/imported/Gameplay Loop.wav-a82ecab8ef799fdd1e982153bd5e1692.sample"]
 
 [params]
 
