@@ -1,5 +1,7 @@
 extends Actor
 
+# map
+@export var map:BaseMap
 @export_category("Inventory")
 @export var _weapons:Array[ItemResource]
 @export var _abilities:Array[ItemResource]
@@ -31,6 +33,7 @@ var face_direction := 1
 @onready var jump_count_label := $CanvasLayer/Stats/JumpCountLabel
 @onready var water := $CanvasLayer/Stats/Water
 @onready var health_label = $CanvasLayer/Stats/health
+@onready var count = $CanvasLayer/count
 
 # Nodes
 @onready var sprite_2d := $Sprite2D
@@ -52,10 +55,11 @@ func _ready():
 	jump_change.connect(update_jump_counter)
 	water_compacity_change.connect(update_water_container_counter)
 	health_changed.connect(update_health_counter)
+	map.count_changed.connect(func(text): count.text = text)
 
 
 func _input(event):
-	if event.is_action_pressed("fire"):
+	if event.is_action_pressed("fire") and !pointer.disabled:
 		var gun_uses_water:bool = (get_current_gun().ammo_type == 'water' and water_capacity > 0)
 		var gun_uses_no_ammo:bool = get_current_gun().ammo_type == 'none'
 		if gun_uses_water or gun_uses_no_ammo:

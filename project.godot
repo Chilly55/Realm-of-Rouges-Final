@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Ignatius: Re-incinerated"
-run/main_scene="res://scenes/levels/Debug.tscn"
+run/main_scene="res://scenes/levels/Level_one.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SignalBus="*res://scripts/autoloads/signal_bus.gd"
 
 [input]
 
