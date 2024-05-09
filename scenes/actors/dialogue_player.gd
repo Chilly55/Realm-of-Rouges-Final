@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var BaseMap 
+@export var map:BaseMap 
 
 var meet_for_first_time  
 var dialogue = []
@@ -30,6 +30,6 @@ func start():
 
 # Victory screen 
 func _on_npc_You_saved_everyone():
-	
+	pass
 
 

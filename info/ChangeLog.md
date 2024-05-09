@@ -1,6 +1,16 @@
 # Change Log
 
 Where changes are placed
+## 0.3
+
+* added scene change button
+* Projectiles now have damage, spawn, and collison sounds
+* Goblin's spearns now make sounds
+* Slimes will make sounds when hurt
+* The dialouge player export was fixed
+* the _on_npc_you_saved_everyone, added a pass to resolve conflicts
+* The fountains will make sounds when giving water
+* Added sfx
 
 ## 0.2.1
 * Added NPC dialogue script
