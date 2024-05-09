@@ -1,6 +1,11 @@
 # Change Log
 
 Where changes are placed
+
+## 0.3.1
+
+* The Npc now works
+
 ## 0.3
 
 * added scene change button
@@ -14,8 +19,8 @@ Where changes are placed
 
 ## 0.2.1
 * Added NPC dialogue script
-    * Added npc dialogue text apon first interaction and collectable completion 
-    * Added ability for dailogue box to appear and diasapear when talking to npc
+	* Added npc dialogue text apon first interaction and collectable completion 
+	* Added ability for dailogue box to appear and diasapear when talking to npc
 
 
 ## 0.2.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b1cvs3wo5a1am"]
+[gd_scene load_steps=16 format=3 uid="uid://b1cvs3wo5a1am"]
 
 [ext_resource type="Texture2D" uid="uid://836h58uh0vcy" path="res://assets/sprites/Tilesets/Terrian.png" id="1_35187"]
 [ext_resource type="Script" path="res://scenes/levels/Debug.gd" id="1_yie5g"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://dw38bbfqy2qu6" path="res://resources/Items/abilities/Hose.tres" id="10_x26yr"]
 [ext_resource type="PackedScene" uid="uid://drj0y0bat3plp" path="res://scenes/actors/goblin.tscn" id="11_vvkej"]
 [ext_resource type="Resource" uid="uid://cw2q1uv8dlxq5" path="res://resources/Items/collectables/debug_collectable.tres" id="12_fx66b"]
+[ext_resource type="PackedScene" uid="uid://ctqr8tkijrci2" path="res://scenes/actors/npc.tscn" id="13_iumev"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dnc5x"]
 texture = ExtResource("1_35187")
@@ -107,6 +108,12 @@ layer_1/tile_data = PackedInt32Array(327680, 65537, 0, 327681, 65537, 0, 327682,
 [node name="WaterFountain" parent="." instance=ExtResource("3_y1txd")]
 position = Vector2(2752, 448)
 
+[node name="NPC" parent="." instance=ExtResource("13_iumev")]
+position = Vector2(2512, 352)
+
+[node name="Dialogue Box" parent="NPC" index="3" node_paths=PackedStringArray("map")]
+map = NodePath("../..")
+
 [node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("2_sqk20")]
 position = Vector2(256, 416)
 map = NodePath("..")
@@ -198,3 +205,5 @@ _item = ExtResource("12_fx66b")
 [node name="ItemHolder10" parent="." instance=ExtResource("7_8bsbp")]
 position = Vector2(4544, -384)
 _item = ExtResource("12_fx66b")
+
+[editable path="NPC"]

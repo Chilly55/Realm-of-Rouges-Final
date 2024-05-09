@@ -4,11 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://onw07es5j1ki" path="res://assets/Sub Assets/dialogue_box.png" id="1_dklbk"]
 
 [node name="Dialogue Box" type="CanvasLayer"]
+layer = 3
 script = ExtResource("1_4o5te")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_right = 409.0
-offset_bottom = 101.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -204.5
+offset_top = -101.0
+offset_right = 204.5
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("1_dklbk")
 
 [node name="Name" type="RichTextLabel" parent="NinePatchRect"]
@@ -20,7 +29,7 @@ offset_bottom = 27.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Villager"
 
-[node name="Chat" type="RichTextLabel" parent="."]
+[node name="Chat" type="RichTextLabel" parent="NinePatchRect"]
 offset_left = 22.0
 offset_top = 27.0
 offset_right = 390.0
