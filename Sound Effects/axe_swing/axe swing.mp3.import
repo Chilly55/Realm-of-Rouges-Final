@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://chw3b5pke5thn"
-path="res://.godot/imported/axe swing.mp3-7d98a42870bbb86c1ca9ec3c1ee2730a.mp3str"
+path="res://.godot/imported/axe swing.mp3-9f5ec66f78686d9b70cbc7a2ce9465e3.mp3str"
 
 [deps]
 
-source_file="res://axe swing.mp3"
-dest_files=["res://.godot/imported/axe swing.mp3-7d98a42870bbb86c1ca9ec3c1ee2730a.mp3str"]
+source_file="res://Sound Effects/axe_swing/axe swing.mp3"
+dest_files=["res://.godot/imported/axe swing.mp3-9f5ec66f78686d9b70cbc7a2ce9465e3.mp3str"]
 
 [params]
 

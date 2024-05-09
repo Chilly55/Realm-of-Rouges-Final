@@ -6,3 +6,6 @@ class_name ProjectileResource
 @export var damage:= 1 
 @export var distance := 600
 @export var gravity := 1.0
+@export_category("sounds")
+@export var spawn_sound:AudioStream
+@export var hit_sound:AudioStream

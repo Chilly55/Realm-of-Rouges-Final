@@ -17,14 +17,12 @@ func _ready():
 
 func give_water():
 	player.change_water_amount(amount_given)
-	print('end')
 	timer.start(interval)
 	
 
 
 func _on_area_2d_body_entered(body):
 	player = body
-	print('start')
 	timer.start()
 
 

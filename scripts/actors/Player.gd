@@ -34,10 +34,12 @@ var face_direction := 1
 @onready var water := $CanvasLayer/Stats/Water
 @onready var health_label = $CanvasLayer/Stats/health
 @onready var count = $CanvasLayer/count
+@onready var interact_label = $InteractLabel
 
 # Nodes
 @onready var sprite_2d := $Sprite2D
 @onready var sprite_2d_2 = $Sprite2D2
+@onready var interaction_area:Area2D = $InteractionArea
 
 @onready var pointer:Pointer = $Pointer
 
@@ -69,11 +71,18 @@ func _input(event):
 		
 	if event.is_action_pressed("next weapon"):
 		change_weapon_index(1)
+	
 	elif event.is_action_pressed("last weapon"):
 		change_weapon_index(-1)
+	
+	if event.is_action_pressed("interact") and interaction_area.has_overlapping_bodies():
+		var interactable = interaction_area.get_overlapping_bodies()[0]
+		interactable.interaction()
 
 
 func _physics_process(delta):
+	interact_label.visible = interaction_area.has_overlapping_bodies()
+	
 	pointer.point_pointer(get_global_mouse_position())
 	sprite_2d_2.look_at(get_global_mouse_position())
 	
@@ -124,6 +133,8 @@ func _process(delta):
 
 
 func change_water_amount(amount:int):
+	if water_capacity < water_limit:
+		$AudioStreamPlayer2D.play()
 	water_capacity = clamp(water_capacity + amount, 0, water_limit)
 	water.text = "Water: %d / %d" % [water_capacity, water_limit]
 

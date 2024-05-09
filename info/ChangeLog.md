@@ -2,6 +2,20 @@
 
 Where changes are placed
 
+## 0.3
+
+* Added scene changer buttons from another project
+* Projectiles
+  * All projectiles have a damage stat
+  * All projectiles now have a spawn and collison sound option
+* Goblin's spear can now make sounds
+* The player can now interact with interactible objects
+  * a water sound effect is played when getting water
+* The slime will now make noises when hit and killed
+  * The slime can now hit the player
+* Destroy player has been added to create temporary audio players
+* Item's cam mow have pick up sounds
+
 ## 0.2
 
 * created the signal bus
@@ -18,7 +32,8 @@ Where changes are placed
 * Slime sprite created
 * Slime sprite changed to new sprites
 
-## 0.1.10 
+## 0.1.10
+
 * Added NPC Placeholder Asset
 * Added NPC IDlE
 * Added NPC Dialogue box

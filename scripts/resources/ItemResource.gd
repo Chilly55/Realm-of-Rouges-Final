@@ -19,6 +19,8 @@ class_name ItemResource
 @export var pick_up_sprite:CompressedTexture2D
 # Weapons
 @export var weapon_sprite:CompressedTexture2D
+@export_category("Sounds")
+@export var pick_up_sound:AudioStream
 
 
 func _validate_property(property):

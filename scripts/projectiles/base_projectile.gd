@@ -18,6 +18,10 @@ func set_up(pos:Vector2, direction:Vector2):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if _projectile_resource.spawn_sound:
+		var new_destroy_player = DestroyPlayer.new(_projectile_resource.spawn_sound, global_position)
+		get_parent().add_child(new_destroy_player)
+	
 	area_2d.collision_mask = collison
 	gravity_scale = _projectile_resource.gravity
 	var death_timer = Timer.new()
@@ -30,8 +34,9 @@ func _ready():
 func die(_node):
 	if _node is Actor:
 		_node.change_health(-_projectile_resource.damage)
+	
+	if _projectile_resource.hit_sound:
+		var new_destroy_player = DestroyPlayer.new(_projectile_resource.hit_sound, global_position)
+		get_parent().add_child(new_destroy_player)
+	
 	queue_free()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

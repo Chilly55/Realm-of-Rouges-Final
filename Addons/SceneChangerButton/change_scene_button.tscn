@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2io8sad3bamg"]
+
+[ext_resource type="Script" path="res://Addons/SceneChangerButton/ChangeSceneButton.gd" id="1_w3p21"]
+
+[node name="ChangeSceneButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_w3p21")

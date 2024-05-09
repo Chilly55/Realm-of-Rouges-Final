@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://c52so8jtsdk1w"]
+[gd_scene load_steps=21 format=3 uid="uid://c52so8jtsdk1w"]
 
 [ext_resource type="Script" path="res://scripts/actors/Player.gd" id="1_pe5nh"]
 [ext_resource type="Texture2D" uid="uid://5l4h3prq1jmg" path="res://assets/sprites/Tilesets/Player.png" id="3_gcnxs"]
 [ext_resource type="Script" path="res://scripts/actors/StatsManager.gd" id="3_hub6t"]
 [ext_resource type="Resource" uid="uid://cw3ds5m5r1pf0" path="res://resources/actors/Player.tres" id="4_jj8wt"]
 [ext_resource type="PackedScene" uid="uid://bivbtviy0fawf" path="res://scenes/items/Pointer.tscn" id="5_4j5vs"]
+[ext_resource type="AudioStream" uid="uid://bwbclngur6h2o" path="res://Sound Effects/water/water-splash-80537.mp3" id="6_qjaqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wir4k"]
 atlas = ExtResource("3_gcnxs")
@@ -92,6 +93,9 @@ size = Vector2(24, 43)
 atlas = ExtResource("3_gcnxs")
 region = Rect2(160, 96, 32, 32)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_oet78"]
+radius = 43.03
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_pe5nh")
@@ -164,5 +168,26 @@ position = Vector2(0, -47)
 texture = SubResource("AtlasTexture_cx63u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_oet78")
+
+[node name="InteractLabel" type="Label" parent="."]
+visible = false
+offset_left = -8.0
+offset_top = -88.0
+offset_right = 32.0
+offset_bottom = -65.0
+size_flags_horizontal = 4
+text = " E"
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_qjaqy")
 
 [connection signal="body_entered" from="PickUpFinder" to="." method="_on_pick_up_finder_body_entered"]

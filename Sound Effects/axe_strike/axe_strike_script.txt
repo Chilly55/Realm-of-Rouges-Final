@@ -5,9 +5,9 @@ onready var sound_player = $AudioStreamPlayer
 
 # Signal handler for when the axe collides with another area
 func _on_Area2D_area_entered(area):
-    if area.is_in_group("enemy"):
-        # play the sound effect using AudioStreamPlayer
-        sound_player.play()
+	if area.is_in_group("enemy"):
+		# play the sound effect using AudioStreamPlayer
+		sound_player.play()
 
 func _ready():
-    connect("area_entered", self, "_on_Area2D_area_entered")
+	connect("area_entered", self, "_on_Area2D_area_entered")

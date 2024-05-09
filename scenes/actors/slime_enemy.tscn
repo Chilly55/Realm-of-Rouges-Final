@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://bjpdfi2sgn0us"]
+[gd_scene load_steps=19 format=3 uid="uid://bjpdfi2sgn0us"]
 
 [ext_resource type="Script" path="res://scripts/actors/slime_enemy.gd" id="1_w5ear"]
 [ext_resource type="Script" path="res://scripts/resources/ActorResource.gd" id="2_3hi1f"]
 [ext_resource type="Texture2D" uid="uid://5l4h3prq1jmg" path="res://assets/sprites/Tilesets/Player.png" id="3_cqchn"]
+[ext_resource type="AudioStream" uid="uid://cca8moagnjv76" path="res://Sound Effects/Slime_movement/slime.mp3" id="4_a2gnf"]
 
 [sub_resource type="Resource" id="Resource_651yb"]
 script = ExtResource("2_3hi1f")
@@ -103,6 +104,8 @@ size = Vector2(300, 32)
 [sub_resource type="CircleShape2D" id="CircleShape2D_5axqb"]
 radius = 7.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_igxjb"]
+
 [node name="Slime Enemy" type="CharacterBody2D"]
 position = Vector2(0, -5)
 collision_layer = 4
@@ -113,8 +116,7 @@ _actor_resource = SubResource("Resource_651yb")
 texture_filter = 1
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_4yrea")
-animation = &"Walk"
-frame_progress = 0.638054
+animation = &"Death"
 
 [node name="Collision Area" type="Area2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 8)
@@ -129,5 +131,17 @@ shape = SubResource("RectangleShape2D_t5d8m")
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_5axqb")
 
+[node name="PlayerDetector" type="Area2D" parent="."]
+position = Vector2(0, -5)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+shape = SubResource("CircleShape2D_igxjb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_a2gnf")
+
 [connection signal="body_entered" from="AnimatedSprite2D/Collision Area" to="." method="_on_collision_area_body_entered"]
 [connection signal="body_shape_exited" from="AnimatedSprite2D/Collision Area" to="." method="_on_collision_area_body_shape_exited"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
