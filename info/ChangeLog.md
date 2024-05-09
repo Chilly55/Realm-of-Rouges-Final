@@ -2,21 +2,13 @@
 
 Where changes are placed
 
-## 0.3
+## 0.2.1
+* Added NPC dialogue script
+    * Added npc dialogue text apon first interaction and collectable completion 
+    * Added ability for dailogue box to appear and diasapear when talking to npc
 
-* Added scene changer buttons from another project
-* Projectiles
-  * All projectiles have a damage stat
-  * All projectiles now have a spawn and collison sound option
-* Goblin's spear can now make sounds
-* The player can now interact with interactible objects
-  * a water sound effect is played when getting water
-* The slime will now make noises when hit and killed
-  * The slime can now hit the player
-* Destroy player has been added to create temporary audio players
-* Item's cam mow have pick up sounds
 
-## 0.2
+## 0.2.0
 
 * created the signal bus
 * Player can now get data from the map
