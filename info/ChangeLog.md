@@ -2,6 +2,28 @@
 
 Where changes are placed
 
+## 0.4
+
+* New sprites added
+	* Water contianer
+	* In danger 
+	* NPC
+	* Axe
+	* Hose
+	* Spear
+	* Slash
+	* Goblin
+	* Water
+	* Fire
+	* Fountain
+* The player can now respawn at the starting point or any fountain touched
+* goblins now have their sprites
+* NPC has their sprite
+* In danger npc's now have sprites
+* all weapons now have sprites
+* all projectiles now have sprites
+* The water fountain now has a sprite
+
 ## 0.3.1
 
 * The Npc now works

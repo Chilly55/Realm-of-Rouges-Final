@@ -11,18 +11,20 @@ var can_fire = true
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+@onready var sprite_2d = $Sprite2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	super()
-	pointer.change_projectile(_weapon._projectile)
+	pointer.change_projectile(_weapon._projectile, _weapon.weapon_sprite)
 
 func _physics_process(delta):
 	if target:
 		var target_position = target.global_position + Vector2(0, -32)
 		pointer.point_pointer(target_position)
+		sprite_2d.flip_h = true if target_position.x < global_position.x else false
 		if can_fire:
 			pointer.fire(target_position)
 			can_fire = false

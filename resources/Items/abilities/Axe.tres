@@ -1,8 +1,16 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://buj8bxysewgwm"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=6 format=3 uid="uid://buj8bxysewgwm"]
 
 [ext_resource type="Script" path="res://scripts/resources/ItemResource.gd" id="1_8euhi"]
 [ext_resource type="Resource" uid="uid://c3t4mpv2p8fm0" path="res://resources/Projectiles/Axe.tres" id="1_cax11"]
-[ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="2_wtpvn"]
+[ext_resource type="Texture2D" uid="uid://5l4h3prq1jmg" path="res://assets/sprites/Tilesets/Player.png" id="2_6tpf4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qairo"]
+atlas = ExtResource("2_6tpf4")
+region = Rect2(256, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ed0a"]
+atlas = ExtResource("2_6tpf4")
+region = Rect2(256, 64, 32, 32)
 
 [resource]
 script = ExtResource("1_8euhi")
@@ -12,5 +20,5 @@ unlock_water = true
 double_jump = true
 _projectile = ExtResource("1_cax11")
 ammo_type = "none"
-pick_up_sprite = ExtResource("2_wtpvn")
-weapon_sprite = ExtResource("2_wtpvn")
+pick_up_sprite = SubResource("AtlasTexture_qairo")
+weapon_sprite = SubResource("AtlasTexture_5ed0a")

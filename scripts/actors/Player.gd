@@ -40,8 +40,10 @@ var face_direction := 1
 @onready var sprite_2d := $Sprite2D
 @onready var sprite_2d_2 = $Sprite2D2
 @onready var interaction_area:Area2D = $InteractionArea
+@onready var pack = $Pack
 
 @onready var pointer:Pointer = $Pointer
+@onready var respawn_point:= global_position
 
 signal jump_change()
 signal water_compacity_change()
@@ -77,7 +79,7 @@ func _input(event):
 	
 	if event.is_action_pressed("interact") and interaction_area.has_overlapping_bodies():
 		var interactable = interaction_area.get_overlapping_bodies()[0]
-		interactable.interaction()
+		interactable.interaction(global_position)
 
 
 func _physics_process(delta):
@@ -123,6 +125,7 @@ func _process(delta):
 	var corrected_direction = 1 if point_direction > 0 else -1
 	sprite_2d.flip_h = true if corrected_direction == 1 else false
 	sprite_2d_2.flip_v = true if corrected_direction == 1 else false
+	pack.flip_h = true if corrected_direction == 1 else false
 	
 	var speed_dis = clamp((face_direction * corrected_direction) * -1, -1, 1)
 	if velocity.x != 0:
@@ -147,7 +150,7 @@ func change_weapon():
 	if _weapons.size() == 0:
 		pointer.disable_pointer(true)
 	else:
-		pointer.change_projectile(get_current_gun()._projectile)
+		pointer.change_projectile(get_current_gun()._projectile,get_current_gun().weapon_sprite)
 		weapon.text = "Weapon: %s" % _weapons[weapon_index].item_name
 
 
@@ -178,8 +181,14 @@ func _on_pick_up_finder_body_entered(body):
 	if item.item_type == "ability" and item not in _abilities:  # if the item is an ability
 		_abilities.append(item)
 		if item.unlock_water:
+			pack.visible = true
 			can_use_water = true
 		if item.double_jump:
 			jump_count_max += 1
 		
 	body.queue_free()
+
+func die():
+	super()
+	change_health(max_health)
+	global_position = respawn_point

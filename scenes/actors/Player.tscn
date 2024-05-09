@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c52so8jtsdk1w"]
+[gd_scene load_steps=22 format=3 uid="uid://c52so8jtsdk1w"]
 
 [ext_resource type="Script" path="res://scripts/actors/Player.gd" id="1_pe5nh"]
 [ext_resource type="Texture2D" uid="uid://5l4h3prq1jmg" path="res://assets/sprites/Tilesets/Player.png" id="3_gcnxs"]
@@ -6,6 +6,10 @@
 [ext_resource type="Resource" uid="uid://cw3ds5m5r1pf0" path="res://resources/actors/Player.tres" id="4_jj8wt"]
 [ext_resource type="PackedScene" uid="uid://bivbtviy0fawf" path="res://scenes/items/Pointer.tscn" id="5_4j5vs"]
 [ext_resource type="AudioStream" uid="uid://bwbclngur6h2o" path="res://Sound Effects/water/water-splash-80537.mp3" id="6_qjaqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kybf"]
+atlas = ExtResource("3_gcnxs")
+region = Rect2(160, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wir4k"]
 atlas = ExtResource("3_gcnxs")
@@ -101,6 +105,12 @@ collision_layer = 2
 script = ExtResource("1_pe5nh")
 _actor_resource = ExtResource("4_jj8wt")
 
+[node name="Pack" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, -48)
+texture = SubResource("AtlasTexture_5kybf")
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -32)
@@ -168,6 +178,8 @@ position = Vector2(0, -47)
 texture = SubResource("AtlasTexture_cx63u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -40)
+zoom = Vector2(1.5, 1.5)
 
 [node name="InteractionArea" type="Area2D" parent="."]
 collision_layer = 0

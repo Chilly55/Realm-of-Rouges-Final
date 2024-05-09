@@ -108,8 +108,11 @@ layer_1/tile_data = PackedInt32Array(327680, 65537, 0, 327681, 65537, 0, 327682,
 [node name="WaterFountain" parent="." instance=ExtResource("3_y1txd")]
 position = Vector2(2752, 448)
 
+[node name="WaterFountain2" parent="." instance=ExtResource("3_y1txd")]
+position = Vector2(4832, -352)
+
 [node name="NPC" parent="." instance=ExtResource("13_iumev")]
-position = Vector2(2512, 352)
+position = Vector2(2512, 416)
 
 [node name="Dialogue Box" parent="NPC" index="3" node_paths=PackedStringArray("map")]
 map = NodePath("../..")
@@ -137,15 +140,15 @@ color = Color(0, 0.737255, 0.737255, 1)
 position = Vector2(1328, 240)
 
 [node name="ItemHolder" parent="." instance=ExtResource("7_8bsbp")]
-position = Vector2(832, 384)
+position = Vector2(832, 416)
 _item = ExtResource("8_kapw6")
 
 [node name="ItemHolder2" parent="." instance=ExtResource("7_8bsbp")]
-position = Vector2(5280, 384)
+position = Vector2(5280, 416)
 _item = ExtResource("9_tjn24")
 
 [node name="ItemHolder3" parent="." instance=ExtResource("7_8bsbp")]
-position = Vector2(4656, -416)
+position = Vector2(4656, -384)
 _item = ExtResource("10_x26yr")
 
 [node name="Slime Enemy2" parent="." instance=ExtResource("4_cb878")]
@@ -179,31 +182,31 @@ position = Vector2(3536, -288)
 position = Vector2(3184, -288)
 
 [node name="ItemHolder4" parent="." instance=ExtResource("7_8bsbp")]
-position = Vector2(4048, 672)
+position = Vector2(4048, 704)
 _item = ExtResource("12_fx66b")
 
 [node name="ItemHolder5" parent="." instance=ExtResource("7_8bsbp")]
-position = Vector2(4240, 672)
+position = Vector2(4240, 704)
 _item = ExtResource("12_fx66b")
 
 [node name="ItemHolder6" parent="." instance=ExtResource("7_8bsbp")]
-position = Vector2(5392, 384)
+position = Vector2(5392, 416)
 _item = ExtResource("12_fx66b")
 
 [node name="ItemHolder7" parent="." instance=ExtResource("7_8bsbp")]
-position = Vector2(5824, -160)
+position = Vector2(5824, -128)
 _item = ExtResource("12_fx66b")
 
 [node name="ItemHolder8" parent="." instance=ExtResource("7_8bsbp")]
-position = Vector2(3360, -320)
+position = Vector2(3360, -288)
 _item = ExtResource("12_fx66b")
 
 [node name="ItemHolder9" parent="." instance=ExtResource("7_8bsbp")]
-position = Vector2(3040, -320)
+position = Vector2(3040, -288)
 _item = ExtResource("12_fx66b")
 
 [node name="ItemHolder10" parent="." instance=ExtResource("7_8bsbp")]
-position = Vector2(4544, -384)
+position = Vector2(4544, -352)
 _item = ExtResource("12_fx66b")
 
 [editable path="NPC"]

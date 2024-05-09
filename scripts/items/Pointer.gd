@@ -10,11 +10,17 @@ class_name Pointer
 var projectile:ProjectileResource
 var disabled = true
 
+func _process(delta):
+	var point_direction = (global_position - emitter.global_position).normalized().x
+	sprite_2d.flip_v = true if point_direction > 0 else false
+
 func disable_pointer(disable:bool):
 	disabled = disable
 	sprite_2d.visible = !disable
 
-func change_projectile(projectile_resource:ProjectileResource):
+func change_projectile(projectile_resource:ProjectileResource, texture:Texture):
+	if texture:
+		sprite_2d.texture = texture
 	projectile = projectile_resource
 	disable_pointer(false)
 

@@ -9,3 +9,5 @@ class_name ProjectileResource
 @export_category("sounds")
 @export var spawn_sound:AudioStream
 @export var hit_sound:AudioStream
+@export_category("sprites")
+@export var sprite:Texture

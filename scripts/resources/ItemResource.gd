@@ -16,9 +16,9 @@ class_name ItemResource
 @export var _projectile:ProjectileResource
 @export_enum('none', 'water') var ammo_type = 'none'
 @export_category("Sprites")
-@export var pick_up_sprite:CompressedTexture2D
+@export var pick_up_sprite:Texture
 # Weapons
-@export var weapon_sprite:CompressedTexture2D
+@export var weapon_sprite:Texture
 @export_category("Sounds")
 @export var pick_up_sound:AudioStream
 

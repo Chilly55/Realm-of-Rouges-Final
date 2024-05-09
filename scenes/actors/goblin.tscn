@@ -1,13 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://drj0y0bat3plp"]
+[gd_scene load_steps=16 format=3 uid="uid://drj0y0bat3plp"]
 
 [ext_resource type="Script" path="res://scripts/actors/goblin.gd" id="1_fyay3"]
 [ext_resource type="AudioStream" uid="uid://bprwba3wfm0n0" path="res://Sound Effects/fireball/fireball.mp3" id="2_88nk8"]
-[ext_resource type="Texture2D" uid="uid://ccn1vtotoo544" path="res://icon.svg" id="2_ieei5"]
 [ext_resource type="Script" path="res://scripts/resources/ProjectileResource.gd" id="2_j7oio"]
 [ext_resource type="PackedScene" uid="uid://bivbtviy0fawf" path="res://scenes/items/Pointer.tscn" id="3_jwq71"]
 [ext_resource type="Script" path="res://scripts/resources/ItemResource.gd" id="3_wdogx"]
 [ext_resource type="AudioStream" uid="uid://chw3b5pke5thn" path="res://Sound Effects/axe_swing/axe swing.mp3" id="4_moc7r"]
 [ext_resource type="Resource" uid="uid://f81326y8srsq" path="res://resources/actors/goblin.tres" id="5_qbsfp"]
+[ext_resource type="Texture2D" uid="uid://5l4h3prq1jmg" path="res://assets/sprites/Tilesets/Player.png" id="6_vtt7u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yh57j"]
+atlas = ExtResource("6_vtt7u")
+region = Rect2(256, 192, 32, 32)
 
 [sub_resource type="Resource" id="Resource_t2xee"]
 script = ExtResource("2_j7oio")
@@ -17,6 +21,11 @@ distance = 150
 gravity = 0.0
 spawn_sound = ExtResource("4_moc7r")
 hit_sound = ExtResource("2_88nk8")
+sprite = SubResource("AtlasTexture_yh57j")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2mcy"]
+atlas = ExtResource("6_vtt7u")
+region = Rect2(256, 160, 32, 32)
 
 [sub_resource type="Resource" id="Resource_qf1sb"]
 script = ExtResource("3_wdogx")
@@ -26,6 +35,11 @@ unlock_water = true
 double_jump = true
 _projectile = SubResource("Resource_t2xee")
 ammo_type = "none"
+weapon_sprite = SubResource("AtlasTexture_d2mcy")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv8k4"]
+atlas = ExtResource("6_vtt7u")
+region = Rect2(0, 192, 32, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x18md"]
 radius = 200.0
@@ -41,8 +55,7 @@ _actor_resource = ExtResource("5_qbsfp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -11)
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("2_ieei5")
+texture = SubResource("AtlasTexture_bv8k4")
 
 [node name="Pointer" parent="." instance=ExtResource("3_jwq71")]
 position = Vector2(0, -11)

@@ -23,6 +23,8 @@ func give_water():
 
 func _on_area_2d_body_entered(body):
 	player = body
+	var new_respawn = Vector2(global_position.x, global_position.y - 15)
+	player.respawn_point = new_respawn if player.respawn_point != new_respawn else player.respawn_point
 	timer.start()
 
 

@@ -1,6 +1,6 @@
 # Realm of Rouges Final
 
-version -  0.3.1
+version -  0.4
 4/10/2024
 
  We are making a 2d Metroidvania game where you play as a firefighter sent to another world.
