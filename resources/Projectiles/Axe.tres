@@ -1,20 +1,9 @@
-[gd_resource type="Resource" script_class="ProjectileResource" load_steps=6 format=3 uid="uid://c3t4mpv2p8fm0"]
+[gd_resource type="Resource" script_class="ProjectileResource" load_steps=2 format=3 uid="uid://c3t4mpv2p8fm0"]
 
 [ext_resource type="Script" path="res://scripts/resources/ProjectileResource.gd" id="1_a4hk1"]
-[ext_resource type="AudioStream" uid="uid://8p73v2jvcu32" path="res://Sound Effects/axe_strike/axe strike.mp3" id="1_gnwkd"]
-[ext_resource type="AudioStream" uid="uid://chw3b5pke5thn" path="res://Sound Effects/axe_swing/axe swing.mp3" id="3_5mggt"]
-[ext_resource type="Texture2D" uid="uid://5l4h3prq1jmg" path="res://assets/sprites/Tilesets/Player.png" id="4_igif1"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ejrs"]
-atlas = ExtResource("4_igif1")
-region = Rect2(224, 160, 32, 32)
 
 [resource]
 script = ExtResource("1_a4hk1")
 life_time = 0.5
-damage = 1
 distance = 50
 gravity = 0.0
-spawn_sound = ExtResource("3_5mggt")
-hit_sound = ExtResource("1_gnwkd")
-sprite = SubResource("AtlasTexture_3ejrs")
