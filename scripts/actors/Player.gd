@@ -41,6 +41,7 @@ var face_direction := 1
 @onready var sprite_2d_2 = $Sprite2D2
 @onready var interaction_area:Area2D = $InteractionArea
 @onready var pack = $Pack
+@onready var coyote_timer = $CoyoteTimer
 
 @onready var pointer:Pointer = $Pointer
 @onready var respawn_point:= global_position
@@ -103,10 +104,10 @@ func _physics_process(delta):
 
 func jump_controls(delta):
 	if not is_on_floor():
-		if jump_count == 0:
-			jump_count = 1
+		coyote_timer.start()
 		velocity.y -= get_gravity() * delta
 	else:
+		coyote_timer.stop()
 		jump_count = 0
 
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or jump_count < jump_count_max):
@@ -192,3 +193,8 @@ func die():
 	super()
 	change_health(max_health)
 	global_position = respawn_point
+
+
+func _on_coyote_timer_timeout():
+	if jump_count > 1:
+		jump_count = 1

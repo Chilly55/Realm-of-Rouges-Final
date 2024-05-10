@@ -13,7 +13,7 @@ func _npc_interaction():
 	start()
 	if not meet_for_first_time:
 		meet_for_first_time = true
-		$NinePatchRect/Chat.text = "<Hello Traveler, we need you to resue the villagers!>"
+		$NinePatchRect/Chat.text = "<Hello Traveler, we need you to rescue the villagers!>"
 	elif map.collect_number < map.number_of_collectables:
 		$NinePatchRect/Chat.text = "<People are still missing>"
 	elif map.collect_number >= map.number_of_collectables:
