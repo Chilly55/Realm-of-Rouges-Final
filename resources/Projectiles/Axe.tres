@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_a4hk1")
 life_time = 0.5
+damage = 1
 distance = 50
 gravity = 0.0

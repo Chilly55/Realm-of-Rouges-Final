@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_tdpr0")
 life_time = 5.0
+damage = 1
 distance = 10000
 gravity = 1.0
