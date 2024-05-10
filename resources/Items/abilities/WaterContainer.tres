@@ -1,6 +1,11 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://bhi7y254w0hge"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://bhi7y254w0hge"]
 
+[ext_resource type="Texture2D" uid="uid://5l4h3prq1jmg" path="res://assets/sprites/Tilesets/Player.png" id="1_f1w2d"]
 [ext_resource type="Script" path="res://scripts/resources/ItemResource.gd" id="1_r176t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1dh7"]
+atlas = ExtResource("1_f1w2d")
+region = Rect2(160, 64, 32, 32)
 
 [resource]
 script = ExtResource("1_r176t")
@@ -9,3 +14,4 @@ item_type = "ability"
 unlock_water = true
 double_jump = true
 ammo_type = "none"
+pick_up_sprite = SubResource("AtlasTexture_n1dh7")

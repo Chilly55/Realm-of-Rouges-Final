@@ -1,6 +1,12 @@
-[gd_resource type="Resource" script_class="ProjectileResource" load_steps=2 format=3 uid="uid://wjwmjxtnjmmu"]
+[gd_resource type="Resource" script_class="ProjectileResource" load_steps=5 format=3 uid="uid://wjwmjxtnjmmu"]
 
+[ext_resource type="AudioStream" uid="uid://bwbclngur6h2o" path="res://Sound Effects/water/water-splash-80537.mp3" id="1_kac7w"]
 [ext_resource type="Script" path="res://scripts/resources/ProjectileResource.gd" id="1_tdpr0"]
+[ext_resource type="Texture2D" uid="uid://5l4h3prq1jmg" path="res://assets/sprites/Tilesets/Player.png" id="3_dient"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7dyp"]
+atlas = ExtResource("3_dient")
+region = Rect2(224, 192, 32, 32)
 
 [resource]
 script = ExtResource("1_tdpr0")
@@ -8,3 +14,5 @@ life_time = 5.0
 damage = 1
 distance = 10000
 gravity = 1.0
+hit_sound = ExtResource("1_kac7w")
+sprite = SubResource("AtlasTexture_y7dyp")

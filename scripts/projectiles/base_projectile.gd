@@ -37,10 +37,9 @@ func _ready():
 
 func die(_node):
 	if _node is Actor:
+		if _projectile_resource.hit_sound:
+			var new_destroy_player = DestroyPlayer.new(_projectile_resource.hit_sound, global_position)
+			get_parent().add_child(new_destroy_player)
 		_node.change_health(-_projectile_resource.damage)
-	
-	if _projectile_resource.hit_sound:
-		var new_destroy_player = DestroyPlayer.new(_projectile_resource.hit_sound, global_position)
-		get_parent().add_child(new_destroy_player)
 	
 	queue_free()

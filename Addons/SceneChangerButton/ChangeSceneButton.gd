@@ -1,4 +1,5 @@
 extends Button
+class_name ChangeSceneButton
 
 @export_file() var scene 
 
