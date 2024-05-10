@@ -18,6 +18,7 @@ func _npc_interaction():
 		$NinePatchRect/Chat.text = "<People are still missing>"
 	elif map.collect_number >= map.number_of_collectables:
 		$NinePatchRect/Chat.text = "<You saved everyone>"
+		get_tree().change_scene("res://scenes/menues/victory_screen.gd")
 
 func _ready():
 	$NinePatchRect.visible = false 

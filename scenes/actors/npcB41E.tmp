@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctqr8tkijrci2"]
+
+[ext_resource type="Script" path="res://NPC.gd" id="1_vm2kl"]
+[ext_resource type="Texture2D" uid="uid://5l4h3prq1jmg" path="res://assets/sprites/Tilesets/Player.png" id="2_ha8nl"]
+[ext_resource type="PackedScene" uid="uid://ceulnjhkk665c" path="res://scenes/actors/dialogue_box.tscn" id="3_rg8dx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsmec"]
+atlas = ExtResource("2_ha8nl")
+region = Rect2(224, 64, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp4r5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsmec")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gs5oj"]
+size = Vector2(27, 58)
+
+[node name="NPC" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_vm2kl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_pp4r5")
+animation = &"IDLE"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -29)
+shape = SubResource("RectangleShape2D_gs5oj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Dialogue Box" parent="." instance=ExtResource("3_rg8dx")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

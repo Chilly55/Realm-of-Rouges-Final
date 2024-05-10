@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4lejvuh3oxte"]
+
+[ext_resource type="Script" path="res://scenes/menues/victory_screen.gd" id="1_cplgw"]
+
+[node name="Victory Screen" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cplgw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quest Complete!"
+horizontal_alignment = 1
+
+[node name="Menu Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Return To Main Menu"
