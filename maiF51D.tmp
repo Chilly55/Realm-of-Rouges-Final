@@ -56,5 +56,4 @@ script = ExtResource("3_l8oj6")
 stream = ExtResource("4_c1cu7")
 autoplay = true
 
-[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/End" to="VBoxContainer/End" method="_on_pressed"]
