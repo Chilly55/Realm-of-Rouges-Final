@@ -222,10 +222,7 @@ texture_filter = 1
 texture = SubResource("AtlasTexture_4ql6h")
 offset = Vector2(4.1, 0)
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Controls"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Controls/HBoxContainer3"]
+[node name="Label" type="Label" parent="CanvasLayer/Controls"]
 layout_mode = 2
 text = "Movement: AD
 Jump: Space
