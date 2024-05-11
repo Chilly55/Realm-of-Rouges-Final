@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://df0kvx6l2fwx8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 59.0
+offset_top = 25.0
+offset_right = 1103.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 90
+text = "Ignatius: Re-Incinerated"
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+offset_left = 156.0
+offset_top = 226.0
+offset_right = 1015.0
+offset_bottom = 609.0
+theme_override_font_sizes/font_size = 24
+text = "                                  Created, Written, and Designed by:
+
+
+                                                       Parris Oliver
+
+                                                         David Cruz
+
+                                                         Max Rafert"
