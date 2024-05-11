@@ -2,6 +2,10 @@
 
 Where changes are placed
 
+## 1.0
+
+* Game Complete
+
 ## 0.4.3
 
 * Added gui sprites

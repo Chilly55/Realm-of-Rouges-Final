@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://camicsyrqvoxa"
+path="res://.godot/imported/Gameplay Loop Fantasy Instrumental.wav-4c2a7c98657f5cdff18b0b435be0d887.sample"
+
+[deps]
+
+source_file="res://Main Menu & Gameplay Loops/Game Play Loop/Gameplay Loop Fantasy Instrumental.wav"
+dest_files=["res://.godot/imported/Gameplay Loop Fantasy Instrumental.wav-4c2a7c98657f5cdff18b0b435be0d887.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

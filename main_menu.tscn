@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://c334ya8plbr04"]
+
+[ext_resource type="Script" path="res://Button.gd" id="2_7hrm1"]
+[ext_resource type="Script" path="res://End.gd" id="3_l8oj6"]
+[ext_resource type="AudioStream" uid="uid://dlsljohy8i4ay" path="res://Main Menu & Gameplay Loops/Main Menu Sound Assets/Main_Menu_Fantasy_Instrumental.wav" id="4_c1cu7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Title" type="TextEdit" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 22.0
+offset_top = 26.0
+offset_right = 1121.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 90
+text = "Ignatious: Re-Incinerated"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 524.0
+offset_top = 314.0
+offset_right = 656.0
+offset_bottom = 536.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 24
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Start"
+script = ExtResource("2_7hrm1")
+scene = "res://scenes/menues/Intro.tscn"
+
+[node name="ChangeSceneButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Credits"
+script = ExtResource("2_7hrm1")
+scene = "res://credits.tscn"
+
+[node name="End" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Exit"
+script = ExtResource("3_l8oj6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_c1cu7")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_ready"]
+[connection signal="pressed" from="VBoxContainer/End" to="VBoxContainer/End" method="_on_pressed"]

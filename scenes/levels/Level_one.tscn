@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://836h58uh0vcy" path="res://assets/sprites/Tilesets/Terrian.png" id="1_35187"]
 [ext_resource type="Script" path="res://scenes/levels/Debug.gd" id="1_yie5g"]
 [ext_resource type="PackedScene" uid="uid://c52so8jtsdk1w" path="res://scenes/actors/Player.tscn" id="2_sqk20"]
-[ext_resource type="AudioStream" uid="uid://ivjiol2binub" path="res://Main Menu & Gameplay Loops/Game Play Loop/Gameplay Loop.wav" id="3_8bmg1"]
 [ext_resource type="PackedScene" uid="uid://cdt51o7td317i" path="res://scenes/interactable/water_fountain.tscn" id="3_y1txd"]
 [ext_resource type="PackedScene" uid="uid://bjpdfi2sgn0us" path="res://scenes/actors/slime_enemy.tscn" id="4_cb878"]
+[ext_resource type="AudioStream" uid="uid://camicsyrqvoxa" path="res://Main Menu & Gameplay Loops/Game Play Loop/Gameplay Loop Fantasy Instrumental.wav" id="6_vajh0"]
 [ext_resource type="PackedScene" uid="uid://dfwtur1aipyev" path="res://scenes/items/ItemHolder.tscn" id="7_8bsbp"]
 [ext_resource type="Resource" uid="uid://buj8bxysewgwm" path="res://resources/Items/abilities/Axe.tres" id="8_kapw6"]
 [ext_resource type="Resource" uid="uid://bhi7y254w0hge" path="res://resources/Items/abilities/WaterContainer.tres" id="9_tjn24"]
@@ -122,7 +122,7 @@ position = Vector2(256, 416)
 map = NodePath("..")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_8bmg1")
+stream = ExtResource("6_vajh0")
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

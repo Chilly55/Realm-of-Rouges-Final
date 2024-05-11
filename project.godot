@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ignatius: Re-incinerated"
-run/main_scene="res://scenes/levels/Level_one.tscn"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
