@@ -2,6 +2,15 @@
 
 Where changes are placed
 
+## 0.4.3
+
+* Added gui sprites
+* Added control hints
+
+## 0.4.2
+
+* Coyote Jump implemented
+
 ## 0.4.1
 
 * Added victory screen that links to main menu

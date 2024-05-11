@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c52so8jtsdk1w"]
+[gd_scene load_steps=25 format=3 uid="uid://c52so8jtsdk1w"]
 
 [ext_resource type="Script" path="res://scripts/actors/Player.gd" id="1_pe5nh"]
 [ext_resource type="Texture2D" uid="uid://5l4h3prq1jmg" path="res://assets/sprites/Tilesets/Player.png" id="3_gcnxs"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cw3ds5m5r1pf0" path="res://resources/actors/Player.tres" id="4_jj8wt"]
 [ext_resource type="PackedScene" uid="uid://bivbtviy0fawf" path="res://scenes/items/Pointer.tscn" id="5_4j5vs"]
 [ext_resource type="AudioStream" uid="uid://bwbclngur6h2o" path="res://Sound Effects/water/water-splash-80537.mp3" id="6_qjaqy"]
+[ext_resource type="Texture2D" uid="uid://dcmsnl1rekgiy" path="res://assets/sprites/GUI.png" id="6_xgbhy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5kybf"]
 atlas = ExtResource("3_gcnxs")
@@ -93,6 +94,14 @@ size = Vector2(13, 43)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orwt2"]
 size = Vector2(24, 43)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkcd3"]
+atlas = ExtResource("6_xgbhy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ql6h"]
+atlas = ExtResource("6_xgbhy")
+region = Rect2(0, 16, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cx63u"]
 atlas = ExtResource("3_gcnxs")
 region = Rect2(160, 96, 32, 32)
@@ -171,6 +180,54 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 
+[node name="Controls" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Controls"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Controls/HBoxContainer"]
+layout_mode = 2
+text = "Attack: "
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Controls/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Controls/HBoxContainer/MarginContainer"]
+texture_filter = 1
+texture = SubResource("AtlasTexture_xkcd3")
+offset = Vector2(4.1, 0)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Controls"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Controls/HBoxContainer2"]
+layout_mode = 2
+text = "Switch Weapon: "
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Controls/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Controls/HBoxContainer2/MarginContainer"]
+texture_filter = 1
+texture = SubResource("AtlasTexture_4ql6h")
+offset = Vector2(4.1, 0)
+
+[node name="Label" type="Label" parent="CanvasLayer/Controls"]
+layout_mode = 2
+text = "Movement: AD
+Jump: Space
+Interact: E"
+
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
@@ -202,4 +259,8 @@ vertical_alignment = 1
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_qjaqy")
 
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.05
+
 [connection signal="body_entered" from="PickUpFinder" to="." method="_on_pick_up_finder_body_entered"]
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
