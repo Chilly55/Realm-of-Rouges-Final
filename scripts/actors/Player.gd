@@ -1,6 +1,7 @@
 extends Actor
 
 # map
+#comment
 @export var map:BaseMap
 @export_category("Inventory")
 @export var _weapons:Array[ItemResource]
